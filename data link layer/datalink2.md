@@ -86,4 +86,6 @@ Present only in I-frames and some U-frames, must contain an integral number of o
 Error detecting code calculated from the remaining bits of the frame, exclusive of flags. The normal code is the 16-bit CRC-CCITT. Optional 32-bit FCS, using CRC-32, may be employed if the frame length or the line reliability dictates this choice.
 
 
-[[Page 1]](https://github.com/changherng/Encoding/blob/main/data%20link%20layer/Datalink.md) [Page 2] [[Page 3]]
+[[Page 1]](https://github.com/changherng/Encoding/blob/main/data%20link%20layer/Datalink.md) 
+[Page 2]
+[Page 3](https://github.com/changherng/Encoding/blob/main/data%20link%20layer/datalink3.md)
