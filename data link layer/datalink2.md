@@ -76,3 +76,14 @@ Unnumbered frames (U-frames) = provide supplemental link control functions
 
 U-frames always contain an 8-bit control field
 
+#### Information and Frame Check Sequence (FCS) Fields
+##### Information Field
+
+Present only in I-frames and some U-frames, must contain an integral number of octets and variable length.
+
+##### Frame Check Sequence Field (FCS)
+
+Error detecting code calculated from the remaining bits of the frame, exclusive of flags. The normal code is the 16-bit CRC-CCITT. Optional 32-bit FCS, using CRC-32, may be employed if the frame length or the line reliability dictates this choice.
+
+
+[[Page 1]](https://github.com/changherng/Encoding/blob/main/data%20link%20layer/Datalink.md) [Page 2] [[Page 3]]
