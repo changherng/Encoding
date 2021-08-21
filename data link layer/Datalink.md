@@ -28,3 +28,29 @@ Without flow control, the receiver's buffer may fill up and overflow while it is
 * Each arrow represents a single frame transiting a data link between two stations.
 * Data are sent in a sequence of frames, with each frame containing a portion of the data and some control information (Sequence no.)
 * The time it takes for a station to emit all of the bits of a frame onto the medium is the transmission time.
+### Stop-and-wait flow control
+* Simplest form of flow control
+ * Source transmit frame -> Destination receives frame and replies with Acknowledgement -> Source waits for ACK before sending new frame -> Destination can stop flow by not sending ACK to source.
+* Source will break up a large block of data into smaller blocks and transmit the data in many frames
+ * The buffer size of the receiver may be limited
+ * The longer the transmission, the more likely an error may occur, causing retransmission of the entire frame
+ * On a shared medium it is usually desirable not to permit one station to the medium for an extended period, thus causing long delays at the other sending station
+### Sliding windows flow control
+* Allows multiple numbered farmes to be in transit
+ * Receiver has buffer W long
+ * Transmitter sends up to W frames without ACK
+ * ACK includes number of next frame expected
+ * Sequence number is bounded by size of field (k)
+  * Frames are numbered modulo 2^k
+  * Giving max window size of uo to 2^(k)-1
+ * Receiver can ACK frames without permitting further transmission (Receive not ready)
+ * Must send a normal ACK to resume
+* If have full-duplex link, can piggyback ACKs.
+### Error control
+* Lost frames - a frame fails to arrive at the other size
+* Damaged frames -  frame arrives but some of the bits are in error
+
+Error detection > Positive ACK > Retransmission after timeout > Negative ACK and retransmission
+
+[Page 1]
+[Page 2]
