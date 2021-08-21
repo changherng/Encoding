@@ -39,3 +39,40 @@ Combined - issues commands and responses
 
 Unbalanced - 1 Primary, multiple secondary
 Balanced - 2 combined stations
+
+#### HDLC Data Transfer Modes
+* Normal response mode (NRM)
+ * Used with an unbalanced configurationo
+ * Primary initiates transfer
+* Asynchronous Balanced Mode (ABM)
+ * Used with a balanced configuration
+ * Either station initiates transmission
+ * Has no poling overhead
+ * Most widely used
+* Asynchronous Response Mode (ARM)
+ * Used with unbalanced configuration
+ * Secondary may transmit without permission from primary
+ * Rarely Used
+
+#### Address Field
+
+Address field identifies secondary station that transmitted or will receive frame and is usually 8 bits long. It may be extended to multiples of 7 bits so leftmost bit indicates if it is the last octet (1) or not (0). For example, the address 11111111 allows a primary to broadcast a frame for reception by all secondaries.
+
+#### HDLC Frame Structure
+
+##### HDLC defines 3 types of frames, each with a different control field format.
+Information frames (I-frames) = carries the data to be transmitted for the user. The flow and error control data, using the ARQ mechanism, are piggybacked on an information frame
+
+Supervisory frames (S-frames) = provide the ARQ mechanism when piggybacking is not used.
+
+Unnumbered frames (U-frames) = provide supplemental link control functions
+
+#### Control field
+* Use of poll/final (P/F) bit depending on context
+* In command frames P bit is set to 1 to solicit (poll) a response from the peer HDLC entity
+* In response frames F bit is set to 1 to indicate the response frame transmitted as a result of a soliciting command
+* The basic control field for S- and I-frames uses 3 bit sequence numbers
+ * An extended control field can be used that employs 7-bit sequence numbers
+
+U-frames always contain an 8-bit control field
+
