@@ -65,3 +65,8 @@ Either HDLC module can initiate a disconnect
 HDLC issues a disconnect by sending a disconnect (DISC) frame
 The remote entity must accpet the disconnect by replying with a UA and informing its layer 3 user that the connection has been termminated.
 Any outstanding unACK I-frames may be lost, and their recovery is the responsibility of higher layers
+
+
+[Page 1]
+[[Page 2]](https://github.com/changherng/Encoding/blob/main/data%20link%20layer/datalink2.md)
+[Page 3]
