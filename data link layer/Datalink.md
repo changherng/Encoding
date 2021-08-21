@@ -53,4 +53,4 @@ Without flow control, the receiver's buffer may fill up and overflow while it is
 Error detection > Positive ACK > Retransmission after timeout > Negative ACK and retransmission
 
 [Page 1]
-[Page 2]
+[[Page 2]](https://github.com/changherng/Encoding/blob/main/data%20link%20layer/datalink2.md)
